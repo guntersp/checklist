@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use "@angular/material" as mat;
+
+/* You can add global styles to this file, and also import other style files */
+$material-design-icons-font-directory-path: '~material-design-icons-iconfont/dist/fonts/';
+@import './node_modules/material-design-icons-iconfont/src/material-design-icons.scss';
+
+
+html,
+body {
+    height: 100vh;
+    margin: 0px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 10px);
+    //padding-left: clamp(5%, 20px, 20px);
+    //padding-right: clamp(5%, 20px, 20px);
+    // padding-top: 10px;
+}
+
+.main>* {
+    //display: flex;
+    flex-grow: 1;
+    //flex-direction: column;
+    width: 100%;
+
+    //padding-bottom: 10px;
+}
