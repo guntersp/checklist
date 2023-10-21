@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "angular"
+		},
+		{
+			"path": "schema"
+		},
+		{
+			"path": "checklists"
+		},
+	],
+	"extensions": {
+		"recommendations": [
+			"redhat.vscode-yaml"
+		]
+	},
+	"settings": {
+		"search.exclude": {
+			"**/node_modules": true
+		},
+		"yaml.yamlVersion": "1.2",
+		"yaml.schemas": {			
+			"../schema/checklist.json": [
+				"checklists/**/*.yaml"
+			]
+		}		
+	}
+}

@@ -1,0 +1,67 @@
+div.main_div {
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+div.content {
+    padding-left: 10px;
+}
+
+div.buttons {
+    padding-left: 30px;
+}
+
+
+//div.title {
+//    padding-top: 20px;
+//}
+
+div.title span {
+    font-weight: bold;
+    font-size: large;
+    font-size: 25px;
+    color: #315fdf;
+}
+
+div.level_1 div.title span {
+    font-size: 20px;
+}
+
+div.level_2 div.title span {
+    font-size: 15px;
+}
+
+div.level_3 div.title span {
+    font-size: 12px;
+}
+
+
+mat-button-toggle-group {
+    margin-right: 10px;
+}
+
+mat-icon {
+    color: #e26f03;
+}
+
+mat-button-toggle-group.disabled mat-icon {
+    color: #eeeeee
+}
+
+mat-button-toggle-group.disabled mat-button-toggle {
+    border-color: #eeeeee !important;
+}
+
+div.title.ok span,
+mat-button-toggle.ok mat-icon.pressed {
+    color: green;
+}
+
+div.title.nok span,
+mat-button-toggle.nok mat-icon.pressed {
+    color: red;
+}
+
+mat-button-toggle-group mat-icon.answered {
+    color: #eeeeee
+}

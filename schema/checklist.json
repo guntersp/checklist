@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fsv-tuebingen.de/checklists",
+  "title": "Describes a full checklist",
+  "description": "A Checklist",
+  "$defs": {
+    "markdown": {
+      "description": "A markdown text",
+      "type": "string"
+    },
+    "checkpoint": {
+      "properties": {
+        "title": {
+          "description": "the title of the checklist",
+          "type": "string"
+        },
+        "description": {
+          "description": "A description of the todo",
+          "$ref": "#/$defs/markdown"
+        },
+        "checkpoints": {
+          "$ref": "#/$defs/checkpoints"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "additionalProperties": false
+    },
+    "checkpoints": {
+      "description": "a list of checkpoints",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/checkpoint"
+          }
+        ]
+      }
+    },
+    "link": {
+      "properties": {
+        "title": {
+          "description": "the title of the link",
+          "type": "string"
+        },
+        "url": {
+          "description": "the url the link points to",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "url"
+      ],
+      "additionalProperties": false
+    },
+    "links": {
+      "description": "a list of links",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/link"
+          }
+        ]
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "title": {
+      "description": "the title of the checklist",
+      "type": "string"
+    },
+    "subtitle": {
+      "description": "the subtitle of the checklist, e.g. some hints",
+      "type": "string"
+    },
+    "header": {
+      "description": "A starting text",
+      "$ref": "#/$defs/markdown"
+    },
+    "footer": {
+      "description": "A starting text",
+      "$ref": "#/$defs/markdown"
+    },
+    "checkpoints": {
+      "$ref": "#/$defs/checkpoints"
+    },
+    "links": {
+      "$ref": "#/$defs/links"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "additionalProperties": false
+}

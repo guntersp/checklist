@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{ appService.title|async }}</h1>
+<div mat-dialog-content>
+    <qrcode [qrdata]="data.url" [allowEmptyString]="true" [cssClass]="'center'" [colorDark]="'#000000ff'"
+        [colorLight]="'#ffffffff'" [elementType]="'svg'" [errorCorrectionLevel]="'M'" [margin]="4" [scale]="1"
+        [title]="'Link to Checklist: {{appService.title|async}}'" [width]="width"></qrcode>
+
+    <div class="link">
+        {{data.url}}
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Close</button>
+</div>

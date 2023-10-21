@@ -1,0 +1,12 @@
+<div class="main_div">
+    <ng-container *ngFor="let c of (all|async)">
+        <h1>{{c.id}}</h1>
+
+        <ul class="links">
+            <li *ngFor="let l of c.checklists">
+                <a href="{{ getChecklistUrl(c, l) }}">{{ l.id || getChecklistUrl(c,
+                    l)}}</a>
+            </li>
+        </ul>
+    </ng-container>
+</div>

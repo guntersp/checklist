@@ -1,0 +1,25 @@
+<div id="not_found" *ngIf="!hasChecklist">
+    <h1>Checkliste nicht gefunden!</h1>
+</div>
+
+<div *ngIf="(data|async) as d">
+    <mat-tab-group #tabs [class]="tabs._tabs.length <= 1 ? 'single_tab' : ''">
+        <mat-tab label="Checklist" *ngIf="hasChecklist">
+            <p class="subtitle" *ngIf="!!(d.subtitle)">{{ d.subtitle }}</p>
+
+            <app-markdown *ngIf="!!(d.header)" [data]="d.header"
+                [assetResolver]="assetResolver.bind(this)"></app-markdown>
+
+            <app-checkpoint *ngFor="let checkpoint of d.checkpoints; index as i" [checkpoint]="checkpoint"
+                [assetResolver]="assetResolver.bind(this)" [prefix]="(i+1)+''"></app-checkpoint>
+
+            <app-markdown *ngIf="!!(d.footer)" [data]="d.footer"
+                [assetResolver]="assetResolver.bind(this)"></app-markdown>
+        </mat-tab>
+        <mat-tab label="Links" *ngIf="hasLinks">
+            <ul class="links">
+                <li *ngFor="let l of d.links"><a href="{{ l.url }}">{{ l.title ||l.url}}</a></li>
+            </ul>
+        </mat-tab>
+    </mat-tab-group>
+</div>

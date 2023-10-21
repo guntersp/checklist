@@ -25,6 +25,6 @@ function zipDirectory(source, out) {
 const id = process.argv[2]
 
 const distDir = __dirname + '/../dist/'
-const outDistDir = __dirname + '/../_builds/'
+const outDistDir = __dirname + '/../../_builds/'
 
 zipDirectory(distDir + id, outDistDir + id + '.zip')

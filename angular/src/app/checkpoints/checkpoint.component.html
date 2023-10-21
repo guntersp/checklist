@@ -1,0 +1,35 @@
+<div [ngClass]="['main_div','level_'+level]">
+    <div class="title" [class]="state||'unanswered'">
+        <mat-button-toggle-group [disabled]="!!this.checkpoint.checkpoints && this.checkpoint.checkpoints.length > 0"
+            [class]="!!this.checkpoint.checkpoints && this.checkpoint.checkpoints.length > 0 ? 'disabled' : ''"
+            [value]="state" (change)="setState($event)">
+            <mat-button-toggle value="ok" class="ok"><mat-icon
+                    [class]="state==='ok' ? 'pressed' : (state ? 'answered' : '')">thumb_up</mat-icon></mat-button-toggle>
+            <mat-button-toggle value="nok" class="nok"><mat-icon
+                    [class]="state==='nok' ? 'pressed' : (state ? 'answered' : '')">thumb_down</mat-icon></mat-button-toggle>
+        </mat-button-toggle-group>
+        <span>{{ prefix||'' }} {{ checkpoint.title }}</span>
+        <!--<mat-checkbox *ngIf="!checkpoint.hidden_checkbox"><span>{{ checkpoint.title }}</span></mat-checkbox>-->
+    </div>
+
+    <div class="buttons">
+        <!--<mat-button-toggle-group [disabled]="!!this.checkpoint.checkpoints && this.checkpoint.checkpoints.length > 0"
+            [class]="!!this.checkpoint.checkpoints && this.checkpoint.checkpoints.length > 0 ? 'disabled' : ''"
+            [value]="state" (change)="setState($event)">
+            <mat-button-toggle value="ok" class="ok"><mat-icon
+                    [class]="state==='ok' ? 'pressed' : (state ? 'answered' : '')">thumb_up</mat-icon></mat-button-toggle>
+            <mat-button-toggle value="nok" class="nok"><mat-icon
+                    [class]="state==='nok' ? 'pressed' : (state ? 'answered' : '')">thumb_down</mat-icon></mat-button-toggle>
+        </mat-button-toggle-group>-->
+    </div>
+
+    <div class="content">
+
+        <app-markdown *ngIf="!!(checkpoint.description)" [data]="checkpoint.description"
+            [assetResolver]="assetResolver"></app-markdown>
+
+
+        <app-checkpoint *ngFor="let checkpoint of checkpoint.checkpoints; index as i" [checkpoint]="checkpoint"
+            [level]="level+1" [assetResolver]="assetResolver" [prefix]="prefix+'.'+(i+1)"></app-checkpoint>
+    </div>
+</div>

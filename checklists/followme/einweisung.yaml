@@ -1,0 +1,26 @@
+title: FollowMe - Einweisung
+#subtitle: Credits to Baden-Württembergischen Luftfahrtverbandes e.V.
+header: |
+    ![Tut Tut](./files/tut_tut.png)
+
+
+checkpoints:
+  - title: Punkt A
+    description: hier könnte viel stehen. Tut es aber nicht
+  - title: Punkt B
+    description: hier könnte viel stehen. Tut es aber nicht
+  - title: Punkt C
+    description: hier könnte viel stehen. Tut es aber nicht
+  - title: Punkt D
+  
+
+
+footer: |
+  # FSV Tübingen
+
+
+links:
+  - title: "Tanken"
+    url: https://www.adac.de/verkehr/tanken-kraftstoff-antrieb/tipps-zum-tanken/
+  - title: "Winde"
+    url: ../../ask21/taeglich
